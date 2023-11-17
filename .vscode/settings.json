@@ -1,5 +1,6 @@
 {
     "go.toolsEnvVars": {
         "GOPATH": "C:\\Users\\Никита\\go\\bin"
-    }
+    },
+    "cmake.configureOnOpen": false
 }

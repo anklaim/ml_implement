@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	cbg "github.com/bourbaki/catboost-go"
+	cbg "go_test_catboost/catboostgo"
 )
 
 func main() {
