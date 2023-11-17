@@ -4,7 +4,7 @@ import "math"
 
 // BinaryClassifer is wrapper over model object that add methods for binary classification
 type BinaryClassifer struct {
-	Model *Model
+	Model *ModelS
 }
 
 func sigmoid(probit float64) float64 {
@@ -20,9 +20,9 @@ func LoadBinaryClassifierFromFile(filename string) (*BinaryClassifer, error) {
 	return &BinaryClassifer{Model: model}, nil
 }
 
-func LoadFullModelFromFile(filename string) {
-	panic("unimplemented")
-}
+// func LoadFullModelFromFile(filename string) {
+// 	panic("unimplemented")
+// }
 
 // PredictProba returns sigmoid scores which could be interpreted like probability
 func (bc *BinaryClassifer) PredictProba(floats [][]float32, floatLength int, cats [][]string, catLength int) ([]float64, error) {

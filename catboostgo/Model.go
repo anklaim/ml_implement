@@ -42,28 +42,28 @@ func makeCStringArrayPointer(array []string) **C.char {
 }
 
 // Model is a wrapper over ModelCalcerHandler
-type Model struct {
+type ModelS struct {
 	Handler unsafe.Pointer
 }
 
 // GetFloatFeaturesCount returns a number of float features used for training
-func (model *Model) GetFloatFeaturesCount() int {
+func (model *ModelS) GetFloatFeaturesCount() int {
 	return int(C.GetFloatFeaturesCount(model.Handler))
 }
 
 // GetCatFeaturesCount returns a number of categorical features used for training
-func (model *Model) GetCatFeaturesCount() int {
+func (model *ModelS) GetCatFeaturesCount() int {
 	return int(C.GetCatFeaturesCount(model.Handler))
 }
 
 // Close deletes model handler
-func (model *Model) Close() {
+func (model *ModelS) Close() {
 	C.ModelCalcerDelete(model.Handler)
 }
 
 // LoadFullModelFromFile loads model from file
 func LoadFullModelFromFile(filename string) (*Model, error) {
-	model := &Model{}
+	model := &ModelS{}
 	model.Handler = C.ModelCalcerCreate()
 	if !C.LoadFullModelFromFile(model.Handler, C.CString(filename)) {
 		return nil, getError()
@@ -72,7 +72,7 @@ func LoadFullModelFromFile(filename string) (*Model, error) {
 }
 
 // CalcModelPrediction returns raw predictions for specified data points
-func (model *Model) CalcModelPrediction(floats [][]float32, floatLength int, cats [][]string, catLength int) ([]float64, error) {
+func (model *ModelS) CalcModelPrediction(floats [][]float32, floatLength int, cats [][]string, catLength int) ([]float64, error) {
 	nSamples := len(floats)
 	results := make([]float64, nSamples)
 
