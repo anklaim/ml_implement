@@ -1,3 +1,3 @@
 module go_test_catboost
 
-go 1.21.3
+go 1.21.4

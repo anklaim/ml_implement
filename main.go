@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	cbg "go_test_catboost/catboostgo"
+	cbg "go_test_catboost/cbg"
 )
 
 func main() {
