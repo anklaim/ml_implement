@@ -1,3 +1,3 @@
-module go_test_catboost
+module ml_implement
 
 go 1.21.4
