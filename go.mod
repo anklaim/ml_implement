@@ -1,3 +1,3 @@
-module github.com/anklaim/go_test_catboost
+module github.com/anklaim/ml_implement
 
 go 1.21.4
