@@ -1,7 +1,7 @@
 package ml_implement
 
 import (
-	cbg "ml_implement/cbg"
+	cbg "github.com/anklaim/ml_implement/cbg"
 )
 
 // на вход подается массив строк со значениями {HOLD, BUY, MISSING}

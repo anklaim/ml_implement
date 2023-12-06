@@ -1,8 +1,9 @@
 package ml_implement
 
 import (
-	cbg "ml_implement/cbg"
 	"testing"
+
+	cbg "github.com/anklaim/ml_implement/cbg"
 
 	"github.com/stretchr/testify/assert"
 )
