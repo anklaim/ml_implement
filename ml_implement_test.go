@@ -1,9 +1,10 @@
-package test
+package ml_implement
 
 import (
-	"fmt"
-	cbg "go_test_catboost/cbg"
+	cbg "ml_implement/cbg"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPredictProba(t *testing.T) {
@@ -60,5 +61,5 @@ func TestPredictProba(t *testing.T) {
 		"HOLD", "HOLD", "HOLD", "HOLD", "HOLD", "BUY", "BUY", "BUY", "BUY",
 		"HOLD", "HOLD", "HOLD", "HOLD", "HOLD", "HOLD", "MISSING"}
 	prob, _ := model.PredictProba(numbers, categories)
-	fmt.Println(prob)
+	assert.Greater(t, prob, 0.0, "Результат должен быть больше 0")
 }
