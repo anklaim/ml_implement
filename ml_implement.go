@@ -56,6 +56,6 @@ func GetCatboostPredict(categories []string) float64 {
 	return prob
 }
 
-func get_model(filename string) (*cbg.BinaryClassifer, error) {
+func GetModel(filename string) (*cbg.BinaryClassifer, error) {
 	return cbg.LoadBinaryClassifierFromFile("cbm_catboost_model.cbm")
 }
