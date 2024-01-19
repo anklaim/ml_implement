@@ -48,7 +48,7 @@ import (
 //	"BREAKOUT_BREAKOUT",
 //	"ORDER_FLOW_ORDER_FLOW",
 //	"INSTANT_PRICE_INSTANT_PRICE",
-func get_catboost_predict(categories []string) float64 {
+func GetCatboostPredict(categories []string) float64 {
 	model, _ := cbg.LoadBinaryClassifierFromFile("cbm_catboost_model.cbm")
 	// 7      fmt.Println(err)
 	numbers := make([]float32, 0)
